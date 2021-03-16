@@ -8,42 +8,6 @@
 # * Сделать промверку на входящие данные в функцию
 # ** Написать тестовую функцию которая будет проверять логику функции.
 
-def variables():
-    l = []
-    d = {}
-    t = (1, 1)
-    thisdict = {"Numbers": 1, "String": "abc", "List": l, "Dictionaries": d, "Tuples": t, "multitudes": set("abcdefg"), "Boolean:": True }
-    return thisdict
-
-
-print(variables())
-
-
-def func(number: int):
-    if isinstance(number, int):
-        sum = number+1
-        subrtract = number -1
-        multiplication = number * 2
-        exponentiation = number ** 3
-        division = number / 2
-        integerDivision = number // 2
-        ost = number % 2
-        d = {"Суммирование": sum ,
-             "Вычитание": subrtract,
-             "Умножение": multiplication,
-             "Возведение в степень": exponentiation,
-             "деление": division,
-             "Целочисленное деление": integerDivision,
-             "Остаток от деления": ost}
-        print(d)
-        return  d
-
-def test_func(func):
-    result: int = func(9)
-    assert isinstance(result, dict)
-
-
-print(test_func(func))
 
 
 
