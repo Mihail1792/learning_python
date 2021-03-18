@@ -18,15 +18,16 @@ def variables():
     d = {}
     t = (1, 1)
     m = set("qwertyuiop")
-    thisdict = {"Integer": i,
-                "Float": f,
-                "Complex": c,
-                "String": s,
-                "List": l,
-                "Dictionaries": d,
-                "Tuples": t,
-                "Multitudes": m,
-                "Boolean:": True
+    b = True
+    thisdict = { type(i): i,
+                type(f): f,
+                type(c): c,
+                type(s): s,
+                type(l): l,
+                type(d): d,
+                type(t): t,
+                type(m): m,
+                type(b): b
                 }
     return thisdict
 
