@@ -7,6 +7,7 @@
 # в котором ключем будет являться название арифметического действия, а значением сам результат.
 # * Сделать промверку на входящие данные в функцию
 # ** Написать тестовую функцию которая будет проверять логику функции.
+import typing
 
 def variables():
     i = 1
@@ -25,14 +26,15 @@ def variables():
                 "Dictionaries": d,
                 "Tuples": t,
                 "Multitudes": m,
-                "Boolean:": True }
+                "Boolean:": True
+                }
     return thisdict
 
 
 print(variables())
 
 
-def func(number: int):
+def func(number: int) -> typing.Optional[dict]:
     if isinstance(number, int):
         sum = number+1
         subrtract = number -1
@@ -47,7 +49,8 @@ def func(number: int):
              "Возведение в степень": exponentiation,
              "деление": division,
              "Целочисленное деление": integerDivision,
-             "Остаток от деления": ost}
+             "Остаток от деления": ost
+             }
         print(d)
     else :
         return None
