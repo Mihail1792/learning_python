@@ -19,7 +19,7 @@ def rever_str_2(s: str) -> typing.Optional[list]:
         return f
     else:
         return None
-#print(rever_str_2("qweqwe uiop rtyuio dfghjkl cvbnm,"))
+print(rever_str_2("qweqwe uiop rtyuio dfghjkl cvbnm,"))
 
 def test_func(rever_str_2):
     result: str = rever_str_2("9qweqwe uiop rtyuio dfghjkl cvbnm,")
@@ -33,4 +33,4 @@ def test_func(rever_str_2):
     result: None = rever_str_2([])
     assert not result
 
-print(test_func(rever_str_2))
+#print(test_func(rever_str_2))
