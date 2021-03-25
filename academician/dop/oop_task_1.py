@@ -49,7 +49,7 @@ class Alphabet:
 class EngAlphabet(Alphabet):
 
     def __init__(self):
-        super().__init__(lang="En", letters=string.ascii_uppercase)
+        super().__init__(lang="En", letters=list(string.ascii_uppercase))
 
         self.__letters_num = len(self.letters)
 
