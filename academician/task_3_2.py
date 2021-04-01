@@ -29,7 +29,7 @@
 
 def calculate_hanoi(disk_number: int, turns_speed: int):
     turns = 2**disk_number - 1
-    seconds = round(turns * (turns_speed/3600))
+    seconds = round(turns * (3600/turns_speed))
     return {"turns": turns, "seconds": seconds}
 
 print(calculate_hanoi(9, 4308))
