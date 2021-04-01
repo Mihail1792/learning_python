@@ -25,11 +25,11 @@
 # Например:
 # `calculate_hanoi(9, 4308) => { turns: 511, seconds: 427 }`
 # Напишите свой код в `.{your_name}/hanoi_calc.py`.
-
+import math
 
 def calculate_hanoi(disk_number: int, turns_speed: int):
     turns = 2**disk_number - 1
-    seconds = round(turns * (3600/turns_speed))
+    seconds = math.floor(turns * (3600/turns_speed))
     return {"turns": turns, "seconds": seconds}
 
 print(calculate_hanoi(9, 4308))
