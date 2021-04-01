@@ -4,13 +4,6 @@
 # 1) lang - язык и 2) letters - список букв. Начальные значения свойств берутся из входных параметров метода.
 # 3. Создайте метод print(), который выведет в консоль буквы алфавита
 # 4. Создайте метод letters_num(), который вернет количество букв в алфавите
-
-class Alphabet:
-    def __init__(self, letters):
-        self.letters = list(letters)
-l1 = Alphabet("ABCDEFG")
-print(l1.letters)
-
 # Класс EngAlphabet
 # 1. Создайте класс EngAlphabet путем наследования от класса Alphabet
 # 2. Создайте метод __init__(), внутри которого будет вызываться родительский метод __init__().
@@ -30,3 +23,28 @@ print(l1.letters)
 # 4. Проверьте, относится ли буква F к английскому алфавиту
 # 5. Проверьте, относится ли буква Щ к английскому алфавиту
 # 6. Выведите пример текста на английском языке
+
+
+import string
+
+
+class Alphabet:
+
+
+    def __init__(self, lang: str, letters: list):
+        self.letters = letters
+        self.lang = lang
+
+    def print(self):
+        print(self.letters)
+
+    def letters_num(self):
+        return len(self.letters)
+
+
+
+
+
+
+
+
