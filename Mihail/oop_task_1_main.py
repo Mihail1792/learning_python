@@ -42,6 +42,33 @@ class Alphabet:
         return len(self.letters)
 
 
+class EngAlphabet(Alphabet):
+
+    __letters_num = 26
+
+    def __init__(self):
+        super(). __init__(lang='En', letters=list(string.ascii_uppercase))
+        self.__letters_num = len(self.letters)
+
+    def is_en_letter(self, letter):
+        if letter in self.letters:
+            return True
+        else:
+            return False
+
+    def letters_num(self):
+        return self.__letters_num
+
+    @staticmethod
+    def example():
+        return "Hello, World"
+
+obj = EngAlphabet()
+obj.print()
+print(obj.letters_num())
+print(obj.is_en_letter("F"))
+print(obj.is_en_letter("Щ"))
+print(obj.example())
 
 
 
