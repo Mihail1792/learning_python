@@ -6,17 +6,20 @@ import numpy as np
 video_capture = cv2.VideoCapture(0)
 
 # Load a sample picture and learn how to recognize it.
-obama_image = face_recognition.load_image_file("/home/rocketdata/Downloads/Telegram Desktop/illia.jpg")
-obama_face_encoding = face_recognition.face_encodings(obama_image)[0]
-
+illia_image = face_recognition.load_image_file("/home/rocketdata/Downloads/Telegram Desktop/illia.jpg")
+illia_face_encoding = face_recognition.face_encodings(illia_image)[0]
+vika_image = face_recognition.load_image_file("/home/rocketdata/Downloads/Telegram Desktop/vika.jpg")
+vika_face_encoding = face_recognition.face_encodings(vika_image)[0]
 # Load a second sample picture and learn how to recognize it.
 
 # Create arrays of known face encodings and their names
 known_face_encodings = [
-    obama_face_encoding,
+    illia_face_encoding,
+    vika_face_encoding,
 ]
 known_face_names = [
-    "Barack Obama",
+    "Illia Zubovich",
+    'Vika'
 ]
 
 # Initialize some variables
