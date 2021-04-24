@@ -17,7 +17,7 @@ def is_number(number: str) -> typing.Optional[int]:
 
 
 def test_func(func):
-    result: int = func('1')
+    result: str = func('1')
     assert isinstance(result, int)
     result: None = func({})
     assert not result
@@ -29,4 +29,4 @@ def test_func(func):
     assert not result
 
 
-test_func(is_number)
+print(test_func(is_number))

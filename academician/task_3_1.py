@@ -24,5 +24,5 @@ class Date:
         else:
             return "Autumn"
 
-a = Date(19, 9, 2017)
+a = Date(5, 10, 1990)
 print(a.get_season())

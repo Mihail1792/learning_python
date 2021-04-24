@@ -53,5 +53,5 @@ def sec(s):
     minutes = s % (24 * 3600) // 3600 // 60
     seconds = s % (24 * 3600) % 3600 % 60
     return(f'{days}:{hours}:{minutes}:{seconds}')
-print(sec(897767789))
+print(sec(938358))
 

@@ -59,4 +59,4 @@ def convert(seconds):
     print(f'{days}:{hours}:{minutes}:{seconds}')
 
 
-convert(1234565)
+convert(3600)
