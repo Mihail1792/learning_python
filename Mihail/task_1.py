@@ -24,7 +24,7 @@ def tip():
     return dict
 
 
-print(tip())
+# print(tip())
 
 # 2. Объявить функцию которая будет принимать в аргументах какое то число,
 # и производить с этим числом какие нибудь арифметические действия ( минимум 7), функция должна вернуть dict,
@@ -67,4 +67,4 @@ def test_f(x: int):
             } if isinstance(x, int) else None
 
 
-print(test_f(func))
+# print(test_f(func))

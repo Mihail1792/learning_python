@@ -5,9 +5,9 @@
 
 # посмотреть задания на почте
 
-
+#
 # class Person:
-
+#
 #     def __init__(self, first_name: str, last_name: str):
 #         self.first_name = first_name
 #         self.last_name = last_name
@@ -88,10 +88,10 @@
 # В исходном списке минимум 2 элемента.
 
 
-# def change(lst):
-#     lst[0], lst[-1] = lst[-1], lst[0]
-#     return lst
-# print(change([1, 2, 3]))
+def change(lst):
+    lst[0], lst[-1] = lst[-1], lst[0]
+    return lst
+print(change([1, 2, 3]))
 
 
 #
@@ -126,20 +126,20 @@
 # необходимо из существующего списка создать словарь
 # a = ["first", 1, 2, 3, "second", 10, 20, "third", 15, 56, 70, "fourth", -50]
 # словарь имеет один ключ и несколько значений
-#
-# a = [1, 2, "second", 10, 20, "first", 1, 2, 3, "third", 15, 56, 70, "fourth", -50]
-#
-# b = {}
-# c = ''
-#
-# for i in a:
-#     if isinstance(i, str):
-#         c = i
-#         b.update({i: []})
-#     else:
-#         if c != "":
-#             b[c].append(i)
-# print(b)
+
+a = [1, 2, "second", 10, 20, "first", 1, 2, 3, "third", 15, 56, 70, "fourth", -50]
+
+b = {}
+c = ''
+
+for i in a:
+    if isinstance(i, str):
+        c = i
+        b.update({i: []})
+    else:
+        if c != "":
+            b[c].append(i)
+print(b)
 
 
 #
@@ -208,14 +208,14 @@
 # игра контрол посмотри
 
 
-# my_list = [3, 5, 2, 1, 4, 4, 4, 4, 1, 10, 20, 20, 8, 8, 8]
-# b = [x for x in set(my_list) if my_list.count(x) > 1]
-# print(b)
-# b = []
-# for x in my_list:
-#     if my_list.count(x) > 1:
-#         b.append(x)
-# print(set(b))
+my_list = [3, 5, 2, 1, 4, 4, 4, 4, 1, 10, 20, 20, 8, 8, 8]
+b = [x for x in set(my_list) if my_list.count(x) > 1]
+print(b)
+b = []
+for x in my_list:
+    if my_list.count(x) > 1:
+        b.append(x)
+print(set(b))
 #
 #
 #

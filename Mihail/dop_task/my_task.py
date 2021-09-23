@@ -1,11 +1,109 @@
 # import random
 #
 #
-# def random_item():
+# def random_item():  # генерит случайное число
 #     control_item = random.randint(0, 100)
 #     return control_item
 #
 #
+# def input_user_item():  # Пользовательский ввод
+#     while True:
+#         try:  # Проверка входящих данных
+#             user_item = int(input('Введите целое число от 0 до 100: '))
+#             if user_item > 100:
+#                 print('Нужно вводить числа от 0 до 100')
+#             elif user_item < 0:
+#                 print('Нужно вводить числа от 0 до 100')
+#             else:
+#                 break
+#         except:
+#             print("ValueError: Нужно вводить целые числа")
+#
+#     return user_item  # Возвращает число, которое ввёл пользователь
+#
+#
+# def operation(control_item, user_item):
+#     reference_value = control_item - user_item  # Отнимаем рандомное от загаданного, чтобы потом сравенить
+#     if control_item - user_item == 0:  # Если ранломное и загаданное совпало, то завершаем функцию
+#         print('Поздравляем! Вы угадали число с первого раза')
+#         return
+#     elif reference_value >= 50:
+#         print('Холодно')
+#     elif reference_value <= 49:
+#         print('Тепло')
+#     key = 1
+#     user_item_dict = {}  # Создаём пустой словарь, в который будем складывать по порядку числа вводимые пользователь
+#     user_item_dict.update({key: user_item})  # Сразу вносим первое значение, которое ввёл пользователь (1: user_item)
+#     while user_item_dict[key] != control_item:  # Запускаем цикл с условием, пока юзер число не равно рандомному, он будет работать
+#         while user_item_dict[key] != control_item:
+#             key += 1  # Счетчик ключей в словаре добавляет по одному (1, 2, 3, 4 и тд)
+#             user_item_dict.update({key: input_user_item()})  # Дополняем словарь ключами key и числами ,которые введёт юзер
+#             key_2 = key - 1  # Номер предыдущего ключа пользователя
+#             primary_number = user_item_dict[key_2]  # Значение предыдущего ключа пользователя
+#             if control_item - user_item_dict[key] == 0:  # Если рандомное число совпало с числом юзера, то
+#                 print(f'Поздравляем! Вы угадали число с {key} попытки')  # Выводим на печать
+#                 break  # Останавливаем цикл, тк условие совпало
+#             if key == 2:
+#                 if 0 - (primary_number - user_item_dict[key]) < 0:  # При первом вводе юзером дважды цифр подряд, которые больше рандомного, срабатывал ("Теплее 1")
+#                     print('Теплее00')  # Эта строка правит проблему ('Холоднее0')
+#             elif key == 2:
+#                 if 0 - (primary_number - user_item_dict[key]) > 0:
+#                     print('Холоднее0')
+#             elif 0 - (control_item - primary_number) > 0 - (control_item - user_item_dict[key]):  # Если выражение True,
+#                 print('Холоднее1')  # то холоднее ('Холоднее1')
+#             elif 0 - (control_item - primary_number) < 0 - (control_item - user_item_dict[key]):  # Если выражение True,
+#                 print('Теплее1')  # то теплее ("Теплее 1")
+#             if 0 - (control_item - user_item_dict[key]) > 0:  # Если выражение True, то переходит к телу цикла while-->
+#                 while user_item_dict[key] != control_item:  # Проверка условий в этом цикле осуществляется по тому же принципу,
+#                     key += 1  # что в предыдущем
+#                     user_item_dict.update({key: input_user_item()})
+#                     key_2 = key - 1
+#                     primary_number = user_item_dict[key_2]
+#                     if control_item - user_item_dict[key] == 0:
+#                         print(f'Поздравляем! Вы угадали число с {key} попытки')
+#                         break
+#                     elif 0 - (control_item - primary_number) < 0 - (control_item - user_item_dict[key]):
+#                         print('Холоднее2')
+#                     elif 0 - (control_item - primary_number) > 0 - (control_item - user_item_dict[key]):
+#                         print('Теплее2')
+#                         if 0 - (control_item - user_item_dict[key]) < 0:
+#                             break
+#
+#
+# def result():  # Функция, которая запускает всё вместе
+#     control_item = random_item()
+#     print('Случайное число, которое загадал ПК:', control_item)
+#     user_item = input_user_item()
+#     operation(control_item, user_item)
+#
+#
+# result()
+
+# Попробуй вводить числа меньше "0", больше "100", буквы, буквы с цифрами.
+# Ну и само собой абсолютно любые числа от "0" до "100" в любой последовательности.
+# Прога не должна выдавать ничего некорректного
+# Попробуй при запуске программы дважды ввести число больше рандомного
+# Попробуй при запуске программы дважды ввести число меньше рандомного
+# Попробуй при запуске программы число меньше рандомного, больше введенного до рандомного
+# Попробуй при запуске программы число больше рандомного, меньше введенного до рандомного
+
+
+
+
+
+
+
+
+
+
+import random
+
+
+def random_item():
+    control_item = random.randint(0, 100)
+    return control_item
+
+
 def input_user_item():
     while True:
         try:
@@ -20,208 +118,52 @@ def input_user_item():
             print("ValueError: Нужно вводить целые числа")
 
     return user_item
-#
-#
-#
-#
-# def operation(control_item, user_item):
-#     reference_value = control_item - user_item
-#     if reference_value >= 50:
-#         print('Холодно')
-#     # elif control_item - user_item == 0:
-#     #     print('Поздравляем! Вы угадали число')
-#     elif reference_value <= 49:
-#         print('Тепло')
-#     return reference_value
-#
-#
-# def area(reference_value, control_item, user_item):
-#     result_item_reference = 0 - reference_value  # опорное число
-#     result_item_user = 0 - user_item
-#     if control_item - user_item == 0:
-#         print('Поздравляем! Вы угадали число')
-#     elif result_item_user > result_item_reference:
-#         print('Холоднее')
-#     elif abs(result_item_user) > control_item:  # сравниваем с контрольным числом по модулю
-#         print('Холоднее')
-#     elif result_item_user < result_item_reference:
-#         print('Теплее')
-#
-#
-# def result():
-#     control_item = random_item()
-#     print(f'Контрольное число: {control_item}')
-#     user_item = input_user_item()
-#     operation(control_item, user_item)
-#     reference_value = operation(control_item, user_item)
-#     while True:
-#         if control_item == user_item:
-#             break
-#         else:
-#             user_item = input_user_item()
-#             area(reference_value, control_item, user_item)
-
-
-# result()
-#
-# # с какой попытки угадал число добавить
-#
-#
-#
-#
-#
-#
-#
-# def prit():
-#     print(f'Первый запуск функции: {random_item()}')
-#     a = 0
-#     while a < 20:
-#         print(random_item())
-#         a += 1
-#
-# # prit()
-
-
-# def operation(control_item, user_item):
-#     reference_value = control_item - user_item
-#     pervichnoe_chislo = user_item
-#     if control_item - user_item == 0:
-#         print('Поздравляем! Вы угадали число')
-#     elif reference_value >= 50:
-#         print('Холодно')
-#     elif reference_value <= 49:
-#         print('Тепло')
-#         return pervichnoe_chislo
-
-
-# def area_1(control_item, user_item, pervichnoe_chislo):
-#     if control_item - user_item == 0:
-#         print('Поздравляем! Вы угадали число')
-#     elif pervichnoe_chislo < user_item < control_item:
-#         print('Теплее')
-#     elif pervichnoe_chislo > user_item < control_item:
-#         print('Холоднее')
-#     elif pervichnoe_chislo < user_item > control_item:
-#         print('Холоднее')
-
-
-
-
-# pervichnoe_chislo = operation(60, 50)
-# print('Контрольное число: 60')
-# print('Первичное число:', pervichnoe_chislo)
-# user_item = input_user_item()
-# area_1(60, user_item, pervichnoe_chislo)
-
-
-
-
-
-
-# def area(reference_value, control_item, user_item):
-#     result_item_reference = 0 - reference_value  # опорное число
-#     print("разность между нулём и первым загаданным числом (result_item_reference)", result_item_reference)
-#     result_item_user = 0 - user_item
-#     print("разность между нулём и следующим загаданным числом (result_item_user)", result_item_user)
-#     if control_item - user_item == 0:
-#         print('Поздравляем! Вы угадали число')
-#     elif result_item_user > result_item_reference:
-#         print('Если (result_item_user) больше (result_item_reference) ---> \nХолоднее')
-#     elif abs(result_item_user) > control_item:  # сравниваем с контрольным числом по модулю
-#         print('Если (result_item_user) больше по модулю (result_item_reference) ---> \nХолоднее')
-#     elif result_item_user < result_item_reference:
-#         print('Если (result_item_user) меньше (result_item_reference) ---> \nТеплее')
-#     return result_item_user
-
-# print(area(20, 80, 80))
-
-# print(60 < 65 and 65 < 80)
-# print(60 < 65 > 80)
-# print(60 < 100 < 80)
-# print(65 > 60 < 80)
-
-
-
 
 
 def operation(control_item, user_item):
     reference_value = control_item - user_item
     if control_item - user_item == 0:
-        print('Поздравляем! Вы угадали число')
+        print('Поздравляем! Вы угадали число с первого раза')
         return
     elif reference_value >= 50:
         print('Холодно')
     elif reference_value <= 49:
         print('Тепло')
-    key = 0
-    while user_item != control_item:
-        key += 1
-        user_item_dict = {}
-        user_item_dict.update({key: input_user_item()})
-        print(user_item_dict)
-        pervichnoe_chislo = user_item_dict[key]
-        print(pervichnoe_chislo)
-        # if pervichnoe_chislo == user_item:
-        #     input_user_item()
-        # elif control_item - user_item == 0:
-        #     print('Поздравляем! Вы угадали число')
-        # elif pervichnoe_chislo < user_item < control_item:
-        #     print('Теплее')
-        # elif pervichnoe_chislo > user_item < control_item:
-        #     print('Холоднее')
-        # elif pervichnoe_chislo < user_item > control_item:
-        #     print('Холоднее')
+    key = 1
+    user_item_dict = {}
+    user_item_dict.update({key: user_item})
+    while user_item_dict[key] != control_item:
+        while user_item_dict[key] != control_item:
+            key += 1
+            user_item_dict.update({key: input_user_item()})
+            key_2 = key - 1
+            primary_number = user_item_dict[key_2]
+            if control_item - user_item_dict[key] == 0:
+                print(f'Поздравляем! Вы угадали число с {key} попытки')
+                break
+            if key == 2:
+                if 0 - (primary_number - user_item_dict[key]) < 0:
+                    print('Теплее00')
+            elif key == 2:
+                if 0 - (primary_number - user_item_dict[key]) > 0: # Попробуй создать условие, в котором сравнивается с сдумя числами, а не с одним предыдущим, типа больше первого, но меньше второго
+                    print('Холоднее0')
+            elif 0 - (control_item - primary_number) > 0 - (control_item - user_item_dict[key]):
+                print('Холоднее1')
+            elif 0 - (control_item - primary_number) < 0 - (control_item - user_item_dict[key]):
+                print('Теплее1')
+            elif 0 - (control_item - primary_number) < 0 - (control_item - user_item_dict[key]):
+                print('Холоднее2')
+            elif 0 - (control_item - primary_number) > 0 - (control_item - user_item_dict[key]):
+                print('Теплее2')
+                if 0 - (control_item - user_item_dict[key]) < 0:
+                    break
 
 
-operation(20, 12)
+def result():
+    control_item = random_item()
+    print('Случайное число, которое загадал ПК:', control_item)
+    user_item = input_user_item()
+    operation(control_item, user_item)
 
 
-        # b = {}
-        # page_link = 0
-        # for item in parsed:
-        #     page_link += 1
-        #     b.update({(page_link): item})
-        # z = b.values()
-        # print(z)
-
-
-
-        # if control_item - user_item == 0:
-        #     print('Поздравляем! Вы угадали число')
-        # elif pervichnoe_chislo < user_item < control_item:
-        #     print('Теплее')
-        # elif pervichnoe_chislo > user_item < control_item:
-        #     print('Холоднее')
-        # elif pervichnoe_chislo < user_item > control_item:
-        #     print('Холоднее')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# buf = pervichnoe_chislo
-# pervichnoe_chislo = user_item
-# user_item = buf
-
-# pervichnoe_chislo = 5
-# user_item = 6
-#
-# buf = pervichnoe_chislo
-# pervichnoe_chislo = user_item
-# user_item = buf
-#
-# print(pervichnoe_chislo)
-# print(user_item)
-
+result()

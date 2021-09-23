@@ -10,7 +10,7 @@ def current_weather(q):
 
 if __name__ == "__main__":
     while True:
-        response = requests.get(f'http://api.openweathermap.org/data/2.5/weather?q=Minsk'
+        response = requests.get(f'http://api.openweathermap.org/data/2.5/weather?q={input("Введите Ваш город: ")}'
                                 f'&appid={api_id}')
         json_data = response.json()
         if response.status_code == 200:
@@ -41,7 +41,7 @@ def cur_rate(q):
 if __name__ == "__main__":
     while True:
         response = requests.get(f'{URL_BASE}'
-                                f'USD?parammode=2')
+                                f'{input("Введите код валюты (USD, EUR, RUB): ")}?parammode=2')
         if response.status_code == 200:
             json_data = response.json()
             cur_name = json_data.get("Cur_Name")

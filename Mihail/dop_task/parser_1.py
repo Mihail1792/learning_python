@@ -130,38 +130,10 @@
 
 
 
+res=['Привет мир вот мой ответ вам на вопрос']
+text = res[0]
+# print(text[text.find('ответ')+1:])
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-result_list = [{'adress': 'Минск'}, {'adress': 'Червень'}, {'adress': 'Гомель'}]
-latlon_list = [{"latlon": [62.031799, 129.754762]}, {"latlon": [42.031566, 229.754987]}, {"latlon": [76.03656, 54.876756]}]
-
-result = [{**x, **y} for x, y in zip(result_list, latlon_list)]
-# print(result)
-
-# print('abca'.strip('ac'))  # 'b'
-# print('abca\n \t'.strip(' '))  # 'abca'
 
 
 
@@ -169,7 +141,7 @@ import re
 
 a = "МишаСаша, 8:00"
 result = re.split(r'\w\w\w\w', a)
-print(result)
+# print(result)
 
 
 
@@ -221,3 +193,6 @@ print(result)
 #         print(result_list)
 
 
+result_list = {'adress': 'Минск', 'dom': '2'}
+a = result_list.keys()
+print(a)
