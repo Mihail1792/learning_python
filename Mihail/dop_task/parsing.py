@@ -1,6 +1,8 @@
 from bs4 import BeautifulSoup
 import requests
 import csv
+
+
 CSV = 'cards.csv'
 HOST = 'https://minfin.com.ua/'
 URL = 'https://minfin.com.ua/cards/'

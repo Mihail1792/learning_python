@@ -14,7 +14,8 @@ class Game:
         print(f"\nДобрейший вечерочек, {self.name}")
 
     def info(self):
-        print(f'Ваш баланс, {self.name}: {self.__money}$')
+        print(f'Ваш баланс, {self.name}: {self._money}$')
+        return self._money
 
     """Метод, который рандомно выдаёт карты и показывает их номинал"""
 
@@ -34,7 +35,7 @@ class Game:
     """Метод, который пополняет кошелёк"""
 
     def top_up_balance(self, howmany):
-        self._money = self.__money + howmany
+        self._money = self._money + howmany
         return howmany
 
     """Метод, который снимает деньги с кошелька"""
@@ -59,47 +60,58 @@ class Player(Game):
                 card_sum += 1
                 value_sum += Player.get_card(self)
                 if value_sum > 21:
-                    print('Перебор, вы проиграли')
+                    print('Перебор')
                     break
                 print(f'Сумма очков: {value_sum}\n')
             if player_input == 'n':
                 break
-        return print(f'Итоговая сумма очков: {value_sum}')
+        print(f'Итоговая сумма очков: {value_sum}')
+        return value_sum
 
 
 class Dealer(Player):
 
     def bets(self):
-        bet = self._money
+        bet = self._money # можно обратиться через имя класса
         print(f'Банк: {bet}')
         return bet
+
 
     def get_result(self, value, bet):
         card_sum = 1
         value_sum = value
         while card_sum != 5:
-            player_input = input(f'Нужно дабавить карту {self.name} y/n?: ')
-            if player_input == 'y':
-                card_sum += 1
-                value_sum += Dealer.get_card(self)
-                if value_sum == 17:
-                    break
-                elif value_sum > 21:
-                    print('Перебор, банкир проиграл')
-                    break
-                elif value_sum == 21:
-                    print(f'Банкир победил {value_sum}')
-                    break
-                print(f'Сумма очков: {value_sum}\n')
-            elif player_input == 'n':
+            card_sum += 1
+            value_sum += Dealer.get_card(self)
+            if value_sum > 21:
+                print('Перебор')
                 break
-        return print(f'Итоговая сумма очков: {value_sum}')
-
+            elif value_sum == 21:
+                break
+            elif value_sum >= 17:
+                break
+            print(f'Сумма очков: {value_sum}\n')
+        print(f'Итоговая сумма очков: {value_sum}')
+        return value_sum
 
 # player = Player("Mike")
-# player.get_result(player.get_card(), player.bets())
-dealer = Dealer('Bob')
-dealer.get_result(dealer.get_card(), dealer.bets())
+# while player.info() > 0:
+#     player.get_result(player.get_card(), player.bets())
+
+
+
+player = Player("Mike")
+player.get_result(player.get_card(), player.bets())
+# player_1 = Player("Kyzbass")
+# player_1.get_result(player_1.get_card(), player_1.bets())
+# player_3 = Player("Stason_Seltison")
+# player_3.get_result(player_3.get_card(), player_3.bets())
+dealer = Dealer('Dealer_Bob')
+# dealer.get_result(dealer.get_card(), dealer.bets())
+
+
+
+
 
 
 
@@ -125,8 +137,8 @@ dealer.get_result(dealer.get_card(), dealer.bets())
 # Банкир при первой раздаче по одной карте, свою карту не показывает, когда игрок сказал хватит,
 # то банкир открывает свою карту и набирает карты в открытую
 # Игра вслепую с шестёркой реализовать
-
-
+# Реализовать регистрацию и рейтинг игроков
+# Суммарная ставка всех игроков за столом не может превышать сумму банка.
 
 # def get_result(self, value, bet):
 #     card_sum = 1
@@ -136,12 +148,31 @@ dealer.get_result(dealer.get_card(), dealer.bets())
 #         if player_input == 'y':
 #             card_sum += 1
 #             value_sum += Dealer.get_card(self)
-#             if value_sum == 17:
+#             if value_sum >= 17:
 #                 break
-#             if value_sum > 21:
-#                 print('Перебор, вы проиграли')
+#             elif value_sum > 21:
+#                 print('Перебор, банкир проиграл')
+#                 break
+#             elif value_sum == 21:
+#                 print(f'Банкир победил {value_sum}')
 #                 break
 #             print(f'Сумма очков: {value_sum}\n')
-#         if player_input == 'n':
+#         elif player_input == 'n':
 #             break
 #     return print(f'Итоговая сумма очков: {value_sum}')
+
+
+
+
+# Слово else, примененное в цикле for или while, проверяет, был ли произведен выход из цикла инструкцией break,
+# или же "естественным" образом. Блок инструкций внутри else выполнится только в том случае,
+# если выход из цикла произошел без помощи break.
+#
+# >>>
+# >>> for i in 'hello world':
+# ...     if i == 'a':
+# ...         break
+# ... else:
+# ...     print('Буквы a в строке нет')
+# ...
+# Буквы a в строке нет
