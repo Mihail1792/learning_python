@@ -33,7 +33,6 @@ class V2(Verification):
 
 
 
-x = V2('Mikkke', '12345678')
-x.save()
+x = V2('LOL31', '12345ss67s85')
 
-# print(x.show())
+print(x.show())

@@ -1,22 +1,22 @@
-# import random
-#
-#
-# def random_item():
-#     control_item = random.randint(0, 100)
-#     if control_item > 50:
-#         print(control_item, "Hello Kyzbass")
-#     else:
-#         print(control_item, "Hello Keratas")
-#     return control_item
-#
-#
-# def sum_item(control_item):
-#     a = 50 + control_item
-#     return a
-#
-# # print(sum_item(random_item()))
-# # control_item = random_item()
-# # print(sum_item(control_item))
+import random
+
+
+def random_item():
+    control_item = random.randint(0, 100)
+    if control_item > 50:
+        print(control_item, "Hello Kyzbass")
+    else:
+        print(control_item, "Hello Keratas")
+    return control_item
+
+
+def sum_item(control_item):
+    a = 50 + control_item
+    return a
+
+print(sum_item(random_item()))
+control_item = random_item()
+print(sum_item(control_item))
 #
 # def my_list_append(control_item, a):
 #     my_list = [1, 3, 5]
@@ -51,18 +51,18 @@
 # если н больше 20, ТО РЕТЁРН НОЛЬ, если меньше или равно 20, то
 # пройтись по диапазону от 1 до числа н и все четные числа возвести в степень к и сложить всё, что получилось
 
-# def func(n, k):
-#     if n > 20:
-#         return 0
-#     else:
-#         a = 0
-#         for i in range(1, n + 1):
-#             if i % 2 == 0:
-#                 print(i)
-#                 a += i ** k
-#         return a
-#
-# print(func(4, 2))
+def func(n, k):
+    if n > 20:
+        return 0
+    else:
+        a = 0
+        for i in range(1, n + 1):
+            if i % 2 == 0:
+                print(i)
+                a += i ** k
+        return a
+
+print(func(4, 2))
 
 # Пользователь делает вклад в размере RUB рублей сроком на years лет под 10% годовых
 # (каждый год размер его вклада увеличивается на 10%. Эти деньги прибавляются к сумме вклада,
@@ -171,86 +171,4 @@
 #     print(*i)
 
 
-# a = 5
-# b = 10
-# print(a, b)
-# (a, b) = (b, a)
-# print(a, b)
 
-
-# my_list = ["first", 1, 2, 3, "second", 10, 20, "third", 15, 56, 70, "fourth", -50]
-# my_dict = {}
-# for el in my_list:
-    # if type(el) is str:
-    #     print('dsfdsf')
-    # my_dict.setdefault(el if type(el) is str else my_dict.get(el))
-    # print(type(el))
-    # if isinstance(el, str):
-    #     f = my_dict.setdefault(el, [])
-    # elif isinstance(el, int):
-# print(my_dict)
-    #     # print(f)
-    #     # print(my_dict)
-    # elif
-    #     print(el)
-    #     a = my_dict.get(el)
-    #     print(a)
-#     if a is not None:
-#         a.append(el)
-# print(my_dict)
-
-
-
-
-
-
-
-
-#     else:
-#         f.append(el)
-#
-# print(my_dict)
-
-    # else:
-    #     print(el)
-    #     a = my_dict.get(el)
-    #     print(a)
-
-        # print(type(my_dict.get(el)))
-        # print(el)
-        # if isinstance(el, int):
-        #     print(my_dict.get(el))
-            # my_dict.get(el).append(el)
-
-# print(my_dict)
-# for i in my_dict:
-#     print(my_dict.get(i))
-
-
-
-
-
-
-# my_list = ["first", 1, 2, 3, "second", 10, 20, "third", 15, 56, 70, "fourth", -50]
-# my_dict = {}
-# list_1 = []
-# for el in my_list:
-#     if isinstance(el, str):
-#         f = my_dict.setdefault((el), [])
-#     elif isinstance(el, int):
-#         list_1.append(el)
-# print(my_dict)
-# print(list_1)
-
-
-
-my_list = ["first", 1, 2, 3, "second", 10, 20, "third", 15, 56, 70, "fourth", -50]
-my_dict = {}
-temporary_list = []
-for el in my_list:
-    if isinstance(el, str):
-        temporary_list = my_dict.setdefault(el, [])
-    else:
-        temporary_list.append(el)
-
-print(my_dict)

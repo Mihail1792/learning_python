@@ -4,7 +4,7 @@ employee_names = ["Дима", "Марина", "Андрей", "Никита"]
 zipped_values = zip(employee_names, employee_numbers)
 zipped_list = list(zipped_values)
 
-# print(zipped_list)
+print(zipped_list)
 
 
 employee_numbers = [2, 9, 18, 28]
@@ -58,7 +58,7 @@ print(employee_numbers)
 date_info = {'year': "2020", 'month': "01", 'day': "01"}
 track_info = {'artist': "Beethoven", 'title': 'Symphony No 5'}
 filename = "{year}-{month}-{day}-{artist}-{title}.txt".format(**date_info,**track_info)
-# print(filename)
+print(filename)
 
 
 
@@ -67,15 +67,6 @@ fields = ['name', 'last_name', 'age', 'job']
 values = ['John', 'Doe', '45', 'Python Developer']
 
 a_dict = dict(zip(fields, values))
-# print(a_dict)
+print(a_dict)
 
 
-
-
-
-# def parser(result):
-#     adress_list, latlon_list, time_list = zip(*result)
-#     return adress_list, latlon_list, time_list
-#
-# result = collector()
-# print(parser(result))

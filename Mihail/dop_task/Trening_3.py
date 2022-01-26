@@ -230,50 +230,50 @@ print(set(b))
 # вычислить средний балл по школе и потом вывести на экран среднюю оценку
 # по каждому классу в школе
 
-# school_journal = [{'school_class': '4a', 'scores': [3,4,4,5,2]},
-#                   {'school_class': '6b', 'scores': [5,5,1,5,3]},
-#                   {'school_class': '3c', 'scores': [1,5,2,2,4]},
-#                   {'school_class': '7d', 'scores': [5,5,3,3,5]},
-#                   {'school_class': '8e', 'scores': [1,2,5,5,1]},
-#                   {'school_class': '9e', 'blabla': [1,2,5,5,1]}]
-# all_scores = []
-# for i in school_journal:
-#     if i.get("scores") is not None:
-#         #print(i.get("scores"))
-#         all_scores.extend(i.get("scores"))
-# #print(all_scores)
-# count = len(all_scores)
-# print(count)
-# summa = 0
-# for x in all_scores:
-#     summa += x
-# print(summa)
-# print(summa / count)
+school_journal = [{'school_class': '4a', 'scores': [3,4,4,5,2]},
+                  {'school_class': '6b', 'scores': [5,5,1,5,3]},
+                  {'school_class': '3c', 'scores': [1,5,2,2,4]},
+                  {'school_class': '7d', 'scores': [5,5,3,3,5]},
+                  {'school_class': '8e', 'scores': [1,2,5,5,1]},
+                  {'school_class': '9e', 'blabla': [1,2,5,5,1]}]
+all_scores = []
+for i in school_journal:
+    if i.get("scores") is not None:
+        #print(i.get("scores"))
+        all_scores.extend(i.get("scores"))
+#print(all_scores)
+count = len(all_scores)
+print(count)
+summa = 0
+for x in all_scores:
+    summa += x
+print(summa)
+print(summa / count)
 
-# my_chool_class = []
-# my_scores = []
-# my_average_scores = []
-# for i in school_journal:
-#     i.get('school_class')
-#     if i in school_journal:
-#         i.get('scores')
-#         my_chool_class = i.get('school_class')
-#         my_scores = i.get('scores')
-#         count = len(my_scores)
-#         summa = 0
-#         for x in my_scores:
-#             summa += x
-#         my_average_scores = (summa / count)
-#         print(f'school_class: {my_chool_class}, scores: {my_average_scores}')
-#
-#
-#
-# all_values = []
-# for i in school_journal:
-#     if i.get('scores') is not None:
-#         all_values.extend(i.get("scores"))
-# average_score = (sum(all_values)/len(all_values))
-# print(f'средний балл по школе: {average_score}')
+my_chool_class = []
+my_scores = []
+my_average_scores = []
+for i in school_journal:
+    i.get('school_class')
+    if i in school_journal:
+        i.get('scores')
+        my_chool_class = i.get('school_class')
+        my_scores = i.get('scores')
+        count = len(my_scores)
+        summa = 0
+        for x in my_scores:
+            summa += x
+        my_average_scores = (summa / count)
+        print(f'school_class: {my_chool_class}, scores: {my_average_scores}')
+
+
+
+all_values = []
+for i in school_journal:
+    if i.get('scores') is not None:
+        all_values.extend(i.get("scores"))
+average_score = (sum(all_values)/len(all_values))
+print(f'средний балл по школе: {average_score}')
 
 
 # Для каждого школьного класса нужно вывести количество девочек и мальчиков в нём и среднюю оценку по классу.
@@ -350,7 +350,7 @@ for class_name, students in counters.items():
     print(f'В классе {class_name} обучается: {girls} девочек и {boys} мальчиков, их средняя оценка: {average_score}, '
           f'\n индекс массы тела {imt} ')
 
-# print(imt)
+print(imt)
 
 
 # student_conditions = {'Олег': [180, 75], 'Миша': [175, 80], 'Маша': [170, 40]}

@@ -9,12 +9,12 @@ result = {k: v for k, v in zip([s for s in my_list if type(s) == str],
 print(result)
 
 
-# things = [("animal", "bear"), ("animal", "duck"), ("plant", "cactus"),
-#           ("vehicle", "speed boat"), ("vehicle", "school bus")]
-# for key, group in groupby(things, lambda x: x[0]):
-#     for thing in group:
-#         print("A %s is a %s." % (thing[1], key))
-#     print()
+things = [("animal", "bear"), ("animal", "duck"), ("plant", "cactus"),
+          ("vehicle", "speed boat"), ("vehicle", "school bus")]
+for key, group in groupby(things, lambda x: x[0]):
+    for thing in group:
+        print("A %s is a %s." % (thing[1], key))
+    print()
 
 # https://pythonworld.ru/moduli/modul-itertools.html
 
