@@ -2,7 +2,6 @@ from bs4 import BeautifulSoup
 import requests
 import csv
 
-
 CSV = 'cards.csv'
 HOST = 'https://minfin.com.ua/'
 URL = 'https://minfin.com.ua/cards/'
@@ -11,9 +10,11 @@ HEADERS = {
     'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Safari/605.1.15'
 }
 
+
 def get_html(url, params=''):
     r = requests.get(url, headers=HEADERS, params=params)
     return r
+
 
 def get_content(html):
     soup = BeautifulSoup(html, 'html.parser')
@@ -32,9 +33,9 @@ def get_content(html):
         )
     return cards
 
+
 html = get_html(URL)
 print(get_content(html.text))
-
 
 
 def save_doc(items, path):
@@ -43,6 +44,7 @@ def save_doc(items, path):
         writer.writerow(['Название продукта', 'Ссылка на продукт', 'Банк', 'Изображение карты'])
         for item in items:
             writer.writerow([item['title'], item['link_product'], item['brand'], item['card_img']])
+
 
 def parser():
     PAGENATION = input('Укажите количество страниц для парсинга: ')
@@ -59,52 +61,5 @@ def parser():
     else:
         print('Error')
 
+
 parser()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# import requests
-# from bs4 import BeautifulSoup
-#
-#
-# def get_html(url):
-#     result = requests.get(url)
-#     return result.text
-#
-#
-# def get_data(html):
-#     soup = BeautifulSoup(html, 'lxml')
-#     h1 = soup.find('h1', {'class': 'page-header__info-title'})
-#     a = soup.find('a', {'href': 'https://habr.com/ru/post/461939/'})
-#     navbar = soup.find('ul', {'id': 'navbar-links'})
-#     li = navbar.find('li').find('a').text
-#     print(li)
-#
-#
-# def main():
-#     html = get_html('https://habr.com/ru/hub/python/')
-#     get_data(html)
-#
-#
-# if __name__ == '__main__':
-#     main()
