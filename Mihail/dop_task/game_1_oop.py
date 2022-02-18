@@ -72,10 +72,9 @@ class Player(Game):
 class Dealer(Player):
 
     def bets(self):
-        bet = self._money # можно обратиться через имя класса
+        bet = self._money  # можно обратиться через имя класса
         print(f'Банк: {bet}')
         return bet
-
 
     def get_result(self, value, bet):
         card_sum = 1
@@ -94,10 +93,10 @@ class Dealer(Player):
         print(f'Итоговая сумма очков: {value_sum}')
         return value_sum
 
+
 # player = Player("Mike")
 # while player.info() > 0:
 #     player.get_result(player.get_card(), player.bets())
-
 
 
 player = Player("Mike")
@@ -108,11 +107,6 @@ player.get_result(player.get_card(), player.bets())
 # player_3.get_result(player_3.get_card(), player_3.bets())
 dealer = Dealer('Dealer_Bob')
 # dealer.get_result(dealer.get_card(), dealer.bets())
-
-
-
-
-
 
 
 # Банкир в свою очередь не может остановится на 15(петля)и обязан остановиться на 17(казна)
@@ -160,8 +154,6 @@ dealer = Dealer('Dealer_Bob')
 #         elif player_input == 'n':
 #             break
 #     return print(f'Итоговая сумма очков: {value_sum}')
-
-
 
 
 # Слово else, примененное в цикле for или while, проверяет, был ли произведен выход из цикла инструкцией break,
